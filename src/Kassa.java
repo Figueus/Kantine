@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class Kassa {
 	private KassaRij kassarij;
 	private int artikelenKassa = 0;
@@ -19,8 +21,8 @@ public class Kassa {
 	* @param persoon die moet afrekenen
 	*/
 	public void rekenAf(Persoon persoon) {
-		double totaalPrijs = persoon.getTotaalPrijs();
-		int totaalArtikelen = persoon.getAantalArtikelen();
+		double totaalPrijs = getTotaalPrijs(persoon);
+		int totaalArtikelen = getAantalArtikelen(persoon);
 		geldInKassa += totaalPrijs;
 		artikelenKassa += totaalArtikelen;
 	}
@@ -71,4 +73,34 @@ public class Kassa {
 		this.artikelenKassa = artikelenKassa;
 	}
 	
+	/**
+	 * Haalt de totaalprijs op van de artikelen die deze persoon op zijn dienblad heeft.
+	 * @param persoon 
+	 * @return De totaalprijs.
+	 */
+	private double getTotaalPrijs(Persoon persoon){
+		Iterator<Artikel> iterator = persoon.getDienblad().getIterator();
+		double totaalPrijs = 0;
+		while(iterator.hasNext()){
+			totaalPrijs += iterator.next().getPrijs();
+		}
+		
+		return totaalPrijs;
+	}
+	
+	/**
+	 * Haalt de totaalprijs op van de artikelen die deze persoon op zijn dienblad heeft.
+	 * @param persoon
+	 * @return Het totaal aantal
+	 */
+	private int getAantalArtikelen(Persoon persoon){
+		Iterator<Artikel> iterator = persoon.getDienblad().getIterator();
+		int totaal = 0;
+		while(iterator.hasNext()){
+			iterator.next();
+			totaal += 1;
+		}
+		
+		return totaal;
+	}
 }

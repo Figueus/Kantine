@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Stack;
 
 public class Dienblad {
@@ -24,10 +25,11 @@ public class Dienblad {
 	* Methode om aantal artikelen op dienblad te tellen
 	* @return Het aantal artikelen
 	*/
+	/*
 	public int getAantalArtikelen() {
 		return artikelen.size();
 	}
-	
+	*/
 	/**
 	 * Getter voor de stack met artikelen
 	 * @return de stack met artikelen
@@ -41,11 +43,16 @@ public class Dienblad {
 	* op dienblad uit te rekenen
 	* @return De totaalprijs
 	*/
+	/*
 	public double getTotaalPrijs() {
 		double totaal = 0;
 		for(Artikel artikel : artikelen){
 			totaal += artikel.getPrijs();
 		}
 		return totaal;
+	}
+	*/
+	public Iterator<Artikel> getIterator(){
+		return getArtikelen().iterator();
 	}
 }

@@ -49,24 +49,27 @@ public class Persoon {
 	* op dienblad dat bij de persoon hoort uit te rekenen
 	* @return De totaalprijs
 	*/
+	/*
 	public double getTotaalPrijs() {
 		if(!checkDienblad()){
 			pakDienblad(new Dienblad());
 		}
 		return dienblad.getTotaalPrijs();
 	}
-	
+	*/
 	/**
 	* Methode om het aantal artikelen op dienblad dat bij de
 	* persoon hoort te tellen
 	* @return Het aantal artikelen
 	*/
+	/*
 	public int getAantalArtikelen() {
 		if(!checkDienblad()){
 			pakDienblad(new Dienblad());
 		}
 		return dienblad.getAantalArtikelen();
 	}
+	*/
 	
 	/**
 	 * Methode om objecten van de klasse Persoon af te drukken
@@ -75,7 +78,7 @@ public class Persoon {
 		System.out.println(" BSN:\t \t" + getBsn() + "\n Voornaam:\t" + getVoornaam() + 
 				"\n Achternaam: \t" + getAchternaam() + "\n Geboortedatum: " +
 				getGeboorteDatum() + "\n Geslacht: \t" + getGeslacht());
-		if(dienblad.getAantalArtikelen() > 0){
+		if(dienblad.getIterator().hasNext()){
 			String naam;
 			double prijs;
 			System.out.println("Artikelen op dienblad:");
@@ -316,5 +319,9 @@ public class Persoon {
 		} else {
 			return false;
 		}
+	}
+	
+	public Dienblad getDienblad(){
+		return dienblad;
 	}
 }
