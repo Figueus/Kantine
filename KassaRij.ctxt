@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=KassaRij()
+comment0.text=\r\n\ Parameterloze\ constructor.\ Maakt\ een\ nieuwe\ LinkedList<Persoon>\ aan\r\n
+comment1.params=personen
+comment1.target=KassaRij(java.util.LinkedList)
+comment1.text=\r\n\ Constructor.\ Zet\ de\ LinkedList<Personen>\ op\ de\ gegeven\ personenlijst\r\n\ @param\ personen\r\n
+comment2.params=persoon
+comment2.target=void\ sluitAchteraan(Persoon)
+comment2.text=\r\n\ Persoon\ sluit\ achter\ in\ de\ rij\ aan\r\n\ @param\ persoon\r\n
+comment3.params=
+comment3.target=Persoon\ volgendePersoon()
+comment3.text=\r\n\ Indien\ er\ een\ rij\ bestaat,\ de\ eerste\ Persoon\ uit\r\n\ de\ rij\ verwijderen\ en\ retourneren.\r\n\ Als\ er\ niemand\ in\ de\ rij\ staat\ geeft\ deze\ null\ terug.\r\n\ @return\ Eerste\ persoon\ in\ de\ rij\ of\ null\r\n
+comment4.params=
+comment4.target=Persoon\ eerstePersoonInRij()
+comment4.text=\r\n\ Indien\ er\ een\ rij\ bestaat,\ de\ eerste\ Persoon\ uit\r\n\ de\ rij\ verwijderen\ en\ retourneren.\r\n\ Als\ er\ niemand\ in\ de\ rij\ staat\ geeft\ deze\ null\ terug.\r\n\ @return\ Eerste\ persoon\ in\ de\ rij\ of\ null\r\n
+comment5.params=
+comment5.target=boolean\ erIsEenRij()
+comment5.text=\r\n\ Methode\ kijkt\ of\ er\ personen\ in\ de\ rij\ staan.\r\n\ @return\ Of\ er\ wel\ of\ geen\ rij\ bestaat\r\n
+numComments=6
