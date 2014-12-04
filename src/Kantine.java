@@ -34,8 +34,8 @@ public class Kantine {
 		persoon = new Persoon();
 		dienblad = new Dienblad();
 		persoon.pakDienblad(dienblad);
-		persoon.pakArtikel(artikel1);
-		persoon.pakArtikel(artikel2);
+		persoon.getDienblad().voegToe(artikel1);
+		persoon.getDienblad().voegToe(artikel2);
 		kassarij.sluitAchteraan(persoon);
 	}
 	

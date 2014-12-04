@@ -37,13 +37,14 @@ public class Persoon {
 	* Methode om artikel te pakken en te plaatsen op het dienblad
 	* @param artikel
 	*/
+	/*
 	public void pakArtikel(Artikel artikel) {
 		if(!checkDienblad()){
 			pakDienblad(new Dienblad());
 		}
 		dienblad.voegToe(artikel);
 	}
-	
+	*/
 	/**
 	* Methode om de totaalprijs van de artikelen
 	* op dienblad dat bij de persoon hoort uit te rekenen
