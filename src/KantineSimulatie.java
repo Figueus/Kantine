@@ -27,12 +27,12 @@ public class KantineSimulatie {
 			// verwerk rij voor de kassa
 			kantine.verwerkRijVoorKassa();
 			// toon dagtotalen (artikelen en geld in kassa)
-			artikelenKassa = kantine.aantalArtikelen();
-			geldInKassa = kantine.hoeveelheidGeldInKassa();
+			artikelenKassa = kantine.getKassa().aantalArtikelen();
+			geldInKassa = kantine.getKassa().hoeveelheidGeldInKassa();
 			System.out.println("Dagtotalen:\n Aantal gepasseerde artikelen: \t" + artikelenKassa + 
 					"\n Hoeveelheid geld in kassa: \t" + geldInKassa);
 			// reset de kassa voor de volgende dag
-			kantine.resetKassa();
+			kantine.getKassa().resetKassa();
 		}
 	}
 }
