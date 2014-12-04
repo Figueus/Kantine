@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=kassarij
+comment0.target=Kassa(KassaRij)
+comment0.text=\r\n\ Constructor\r\n
+comment1.params=persoon
+comment1.target=void\ rekenAf(Persoon)
+comment1.text=\r\n\ vraag\ het\ aantal\ artikelen\ en\ de\ totaalprijs\ op.\r\n\ De\ implementatie\ wordt\ later\ vervangen\r\n\ door\ een\ echte\ betaling\ door\ de\ persoon.\r\n\ @param\ persoon\ die\ moet\ afrekenen\r\n
+comment2.params=
+comment2.target=int\ aantalArtikelen()
+comment2.text=\r\n\ Geeft\ het\ aantal\ artikelen\ dat\ de\ kassa\r\n\ heeft\ gepasseerd,\r\n\ vanaf\ het\ moment\ dat\ de\ methode\ resetWaarden\r\n\ is\ aangeroepen.\r\n\ @return\ aantal\ artikelen\r\n
+comment3.params=
+comment3.target=double\ hoeveelheidGeldInKassa()
+comment3.text=\r\n\ Geeft\ het\ totaalbedrag\ van\ alle\ artikelen\ die\r\n\ de\ kassa\ zijn\ gepasseerd,\ vanaf\ het\ moment\ dat\ de\ methode\r\n\ resetKassa\ is\ aangeroepen.\r\n\ @return\ hoeveelheid\ geld\ in\ de\ kassa\r\n
+comment4.params=
+comment4.target=void\ resetKassa()
+comment4.text=\r\n\ reset\ de\ waarden\ van\ het\ aantal\ gepasseerde\ artikelen\ en\r\n\ de\ totale\ hoeveelheid\ geld\ in\ de\ kassa.\r\n
+comment5.params=geldInKassa
+comment5.target=void\ setGeldInKassa(double)
+comment5.text=\r\n\ Setter\ voor\ de\ hoeveelheid\ geld\ in\ de\ kassa\r\n\ @param\ geldInKassa\r\n
+comment6.params=artikelenKassa
+comment6.target=void\ setArtikelenKassa(int)
+comment6.text=\r\n\ Setter\ voor\ het\ aantal\ artikelen\ dat\ de\ kassa\ is\ gepasseerd\r\n\ @param\ artikelenKassa\r\n
+numComments=7
