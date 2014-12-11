@@ -1,43 +1,70 @@
 
-public class Artikel {
-	private String naam;
-	private double prijs;
-	
-	public Artikel(String naam, double prijs){
-		setNaam(naam);
-		setPrijs(prijs);
-	}
-	
-	public Artikel(){
-		setNaam("");
-		setPrijs(-1);
-	}
-	
-	public void drukAf(){
-		if(prijs > 0){ 
-		System.out.println(" Naam: \t\t" + getNaam() + "\n Prijs: \t" + getPrijs());
-		} else {
-			System.out.println(" Naam: \t\t" + getNaam() + "\n Prijs: \t Onbekend");
-		}
-	}
-	
-	public String getNaam() {
-		return naam;
-	}
+/**
+ * Deze klasse zal de methodes bevatten om een naamArtikele en prijsArtikel te setten.
+ * 
+ * @author Robert van Timmeren & Jan-Bert
+ * @version 1.9
+ */
+public class Artikel
+{
+    
+    public String naam;
+    public double prijs;
 
-	public void setNaam(String naam) {
-		if(!naam.isEmpty()){
-			this.naam = naam;
-		} else {
-			this.naam = "Onbekend";
-		}
-	}
+    /**
+     * Het intialiseren van de variabelen.
+     */
+    
+    public Artikel(String naam, double prijs){
+        this.naam=naam;
+        this.prijs=prijs;
+    }
+    
+    
+    /**
+     * De methode of de naamArtikel te setten.
+     */
+    public void setNaam(String naam)    {
+       this.naam = naam;
+    }
+    
 
-	public double getPrijs() {
-		return prijs;
-	}
-
-	public void setPrijs(double prijs) {
-		this.prijs = prijs;
-	}
+    /**
+     * De methode of de prijsArtikel te setten.
+     * 
+     */
+    public void setPrijs(double prijs)
+    {
+        this.prijs=prijs;
+    }
+    
+    /**
+     * Een getter met een return.
+     */
+    
+    public String getNaam()
+    {
+       return naam;
+       
+    }
+    
+    /**
+     * Een getter met een return.
+     */
+    
+    public double getPrijs()
+    {
+        
+        return prijs;
+    }
+    
+    /**
+     * Een getter die alle gegevens print.
+     */
+    
+    public void getGegevens()
+    {
+       System.out.println(getNaam() + getPrijs());
+       
+    }
 }

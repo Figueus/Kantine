@@ -1,98 +1,75 @@
+
+/**
+ * Write a description of class Kantine here.
+ * 
+ * @author Robert van Timmeren & Jan-Bert
+ * @version 1.9
+ */
 public class Kantine {
-	private Kassa kassa;
-	private KassaRij kassarij;
-	private Persoon persoon;
-	private Dienblad dienblad; 
-	
-	/*
-	 * Opdracht 5A:
-	 * De while-lus is hier beter, omdat je nu van
-	 * te voren niet hieft uit te zoeken hoeveel 
-	 * mensen er in de rij staan om alle personen 
-	 * in de rij te verwerken
-	 */
-	
-	/**
-	 *Constructor
-	 */
-	public Kantine() {
-		kassarij= new KassaRij();
-		kassa= new Kassa(kassarij);
-	}
+    private Kassa kassa;
+    private KassaRij kassaRij;
+    private KantineAanbod kantineaanbod;
 
-	/**
-	 * In deze methode wordt een Persoon en Dienblad
-	 * gemaakt en aan elkaar
-	 * gekoppeld. Maak twee Artikelen aan en plaats
-	 * deze op het dienblad.
-	 * Tenslotte sluit de Persoon zich aan bij de rij
-	 * voor de kassa.
-	 */
-	public void loopPakSluitAan() {
-		Artikel artikel1 = new Artikel("Melk", 1.50);
-		Artikel artikel2 = new Artikel("Frikandelbroodje", 2);
-		persoon = new Persoon();
-		dienblad = new Dienblad();
-		persoon.pakDienblad(dienblad);
-		persoon.getDienblad().voegToe(artikel1);
-		persoon.getDienblad().voegToe(artikel2);
-		kassarij.sluitAchteraan(persoon);
-	}
-	
-	/**
-	 * Deze methode handelt de rij voor de kassa af.
-	 */
-	public void verwerkRijVoorKassa() {
-		Persoon persoon;
-		int aantalArtikelen = 0;
-		double prijs = 0;
-		while(kassarij.erIsEenRij()) {
-			persoon = kassarij.eerstePersoonInRij();
-			kassa.rekenAf(persoon);
-		}
-		/* wordt dit niet al in kassa.rekenAf(p) gedaan? 
-		kassa.setGeldInKassa(prijs + kassa.hoeveelheidGeldInKassa());
-		kassa.setArtikelenKassa(kassa.aantalArtikelen() + aantalArtikelen);
-		*/
-	}
-	
-	/**
-	 * Deze methode telt het geld uit de kassa
-	 * @return hoeveelheid geld in kassa
-	 */
-	/*
-	public double hoeveelheidGeldInKassa() {
-		return kassa.hoeveelheidGeldInKassa();
-	}
-*/
-	/**
-	 * Deze methode geeft het aantal gepasseerde artikelen.
-	 * @return het aantal gepasseerde artikelen
-	 */
-	/*
-	public int aantalArtikelen(){
-		return kassa.aantalArtikelen();
-	}
-	*/
+    /**
+    * Constructor
+    */
+    public Kantine() 
+    {
+        kassaRij=new KassaRij();
+        kassa=new Kassa(kassaRij);
+    }
 
-	/**
-	 * Deze methode reset de bijgehouden telling van
-	 * het aantal artikelen
-	 * en "leegt" de inhoud van de kassa.
-	 */
-	
-	/*
-	public void resetKassa() {
-		kassa.resetKassa();
-	}
-	*/
-	
-	public void sluitAchteraan(Persoon persoon){
-		kassarij.sluitAchteraan(persoon);
-	}
-	
-	public Kassa getKassa(){
-		return kassa;
-	}
-	
+    /**
+     * In deze methode kiest een Persoon met een dienblad
+     * de artikelen in artikelnamen.
+     * @param persoon
+     * @param artikelnamen
+     */
+    public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) 
+    {
+        for(int i=0; i<artikelnamen.length; i++)
+        {
+            Artikel artikel = kantineaanbod.getArtikel(artikelnamen[i]);
+            persoon.getDienblad().voegToe(artikel);
+            kassaRij.sluitAchteraan(persoon);
+        }
+    }
+
+    /**
+    * Deze methode handelt de rij voor de kassa af.
+    */
+    public void verwerkRijVoorKassa() 
+    {
+        while(kassaRij.erIsEenRij()) 
+        {
+            kassa.rekenAf(kassaRij.eerstePersoonInRij());
+            kassaRij.verwijderUitRij(kassaRij.eerstePersoonInRij());
+        }
+    }
+    
+   /**
+    * Een getter voor de private instantie
+    * variabele kassa in de klasse Kantine
+    */
+   public Kassa getKassa()
+   {
+       return kassa;
+   }
+   
+    /**
+     * methode om het kantine aanbod te setten in de variabele kantineaanbod.
+     */
+    public void setKantineAanbod(KantineAanbod kantineaanbod)
+    {
+        this.kantineaanbod = kantineaanbod;
+    }
+   
+    /**
+     * methode om het kantineaanbod object op te vragen.
+     */
+   
+    public KantineAanbod getKantineAanbod()
+    {
+        return this.kantineaanbod;
+    }
 }
