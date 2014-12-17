@@ -39,12 +39,22 @@ public class Kassa {
     {
             Dienblad dienblad = persoon.getDienblad();
             Iterator<Artikel> artikelen = dienblad.getIterator();
+            double totaal = 0;
             while(artikelen.hasNext())
             {
                     aantalArtikelen++;
                     Artikel artikel = artikelen.next();
-                    kassaGeld += artikel.getPrijs();
+                    totaal += artikel.getPrijs();
             }
+            if(persoon.getBetaalwijze().betaal(totaal)){
+            	kassaGeld += totaal;
+            }
+            else{
+            	System.out.println("Kan de artikelen niet betalen.");
+            }
+            
+            //TODO
+            
     }
         
     /**

@@ -3,7 +3,7 @@
  * 
  * 
  * @author Robert van Timmeren & Jan-Bert
- * @version 1.9
+ * @version 1.9.1
  */
 public class Persoon
 {
@@ -15,6 +15,7 @@ public class Persoon
     private int maand;
     private int jaar;
     private char geslacht;
+    private Betaalwijze betaalwijze;
     
     private Dienblad dienblad;
     
@@ -254,4 +255,12 @@ public class Persoon
              System.out.println("Fout! Vul je geboortedatum opnieuw in. Let erop dat je een datum invult die bestaat!");
         }
     }
+
+	public Betaalwijze getBetaalwijze() {
+		return betaalwijze;
+	}
+
+	public void setBetaalwijze(Betaalwijze betaalwijze) {
+		this.betaalwijze = betaalwijze;
+	}
 }
