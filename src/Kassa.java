@@ -57,9 +57,12 @@ public class Kassa {
             		totaal = totaal - korting;
             	}
             }
+            //Zorgt voor een betaalwijze zodat de simulatie nog blijft lopen.
             Betaalwijze betaalwijze = new Contant();
             betaalwijze.setSaldo(90);
             persoon.setBetaalwijze(betaalwijze);
+            
+            
             if(persoon.getBetaalwijze().betaal(totaal)){
             	kassaGeld += totaal;
             }
