@@ -3,7 +3,7 @@
  * @author Robert van Timmeren & Jan-Bert
  *
  */
-public class Docent extends Persoon {
+public class Docent extends Persoon implements KortingskaartHouder{
 
 	private String afkorting;
 	private String afdeling;
@@ -46,5 +46,23 @@ public class Docent extends Persoon {
 	public void drukAf(){
 		System.out.println("Afkorting: " + getAfkorting());
 		System.out.println("Afdeling: " + getAfdeling());
+	}
+
+	@Override
+	public double geefKortingsPercentage() {
+		// TODO Auto-generated method stub
+		return 0.25;
+	}
+
+	@Override
+	public boolean heeftMaximum() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public double geefMaximum() {
+		// TODO Auto-generated method stub
+		return 1;
 	}
 }

@@ -46,6 +46,20 @@ public class Kassa {
                     Artikel artikel = artikelen.next();
                     totaal += artikel.getPrijs();
             }
+            //kijkt of er korting moet worden gegeven en hoeveel dat dan is.
+            if(persoon instanceof KortingskaartHouder){
+            	if(persoon instanceof Docent || persoon instanceof Kantinemedewerker){
+            		double korting = 0;
+            		korting = totaal * ((KortingskaartHouder) persoon).geefKortingsPercentage(); 
+            		if(korting > ((KortingskaartHouder) persoon).geefMaximum()){
+            			korting = ((KortingskaartHouder) persoon).geefMaximum();
+            		}
+            		totaal = totaal - korting;
+            	}
+            }
+            Betaalwijze betaalwijze = new Contant();
+            betaalwijze.setSaldo(90);
+            persoon.setBetaalwijze(betaalwijze);
             if(persoon.getBetaalwijze().betaal(totaal)){
             	kassaGeld += totaal;
             }

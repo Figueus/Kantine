@@ -1,5 +1,5 @@
 
-public class Kantinemedewerker extends Persoon {
+public class Kantinemedewerker extends Persoon implements KortingskaartHouder{
 
 	private String medewerkersNummer;
 	private boolean kassaRechten;
@@ -42,5 +42,23 @@ public class Kantinemedewerker extends Persoon {
 	public void drukAf(){
 		System.out.println("Medewerkersnummer: " + getMedewerkersNummer());
 		System.out.println("Mag achter de kassa: " + isKassaRechten());
+	}
+
+	@Override
+	public double geefKortingsPercentage() {
+		// TODO Auto-generated method stub
+		return 0.35;
+	}
+
+	@Override
+	public boolean heeftMaximum() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public double geefMaximum() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
