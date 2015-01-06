@@ -43,9 +43,18 @@ public class Docent extends Persoon implements KortingskaartHouder{
 	}
 	
 	@Override
-	public void drukAf(){
+	public String toString(){
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Afkorting: " + getAfkorting());
+		stringBuilder.append(System.getProperty("line.separator"));
+		stringBuilder.append("Afdeling: " + getAfdeling());
+		
+		return stringBuilder.toString();
+		
+		/*
 		System.out.println("Afkorting: " + getAfkorting());
 		System.out.println("Afdeling: " + getAfdeling());
+		*/
 	}
 
 	@Override

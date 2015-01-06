@@ -139,7 +139,7 @@ public class KantineSimulatie {
                  String[] artikelen = geefArtikelNamen(nodig);
 
                  kantine.loopPakSluitAan(persoon, artikelen);
-                 System.out.println(persoon);
+                 System.out.println(persoon.toString());
              }
  
              // verwerk rij voor de kassa

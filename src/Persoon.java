@@ -36,13 +36,31 @@ public class Persoon
      * Deze methode zal alle ingevulde gegevens uitprinten.
      * 
      */
-    public void drukAf()
+    @Override
+    public String toString()
     {
+    	//System.getProperty("line.separator");
+    	StringBuilder stringBuilder = new StringBuilder();
+    	
+    	stringBuilder.append("Sofinummer: " + getBsn());
+    	stringBuilder.append(System.getProperty("line.separator"));
+    	stringBuilder.append("Voornaam: " + getVoornaam());
+    	stringBuilder.append(System.getProperty("line.separator"));
+    	stringBuilder.append("Achternaam: " + getAchternaam());
+    	stringBuilder.append(System.getProperty("line.separator"));
+    	stringBuilder.append("Geboortedatum: " + getGeboortedatum());
+    	stringBuilder.append(System.getProperty("line.separator"));
+    	stringBuilder.append("Geslacht: " + getGeslacht());
+    	
+    	return stringBuilder.toString();
+    	
+    	/*
         System.out.println("Sofinummer: " + getBsn());
         System.out.println("Voornaam: " + getVoornaam());
         System.out.println("Achternaam: " + getAchternaam());
         System.out.println("Geboortedatum: " + getGeboortedatum());
         System.out.println("Geslacht: " + getGeslacht() + "\n");
+        */
     }
     
     /**

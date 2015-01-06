@@ -39,9 +39,18 @@ public class Kantinemedewerker extends Persoon implements KortingskaartHouder{
 	}
 	
 	@Override
-	public void drukAf(){
+	public String toString(){
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		stringBuilder.append("Medewerkersnummer: " + getMedewerkersNummer());
+		stringBuilder.append(System.getProperty("line.separator"));
+		stringBuilder.append("Mag achter de kassa: " + isKassaRechten());
+		
+		return stringBuilder.toString();
+		/*
 		System.out.println("Medewerkersnummer: " + getMedewerkersNummer());
 		System.out.println("Mag achter de kassa: " + isKassaRechten());
+		*/
 	}
 
 	@Override

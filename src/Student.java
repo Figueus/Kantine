@@ -42,8 +42,17 @@ public class Student extends Persoon {
 	}
 	
 	@Override
-	public void drukAf(){
+	public String toString(){
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		stringBuilder.append("Studentnummer: " + getStudentNummer());
+		stringBuilder.append(System.getProperty("line.separator"));
+		stringBuilder.append("Studierichting: " + getStudieRichting());
+		
+		return stringBuilder.toString();
+	/*	
 	System.out.println("Studentnummer: " + getStudentNummer());
 	System.out.println("Studierichting: " + getStudieRichting());
+	*/
 	}
 }
