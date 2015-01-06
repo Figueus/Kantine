@@ -281,4 +281,22 @@ public class Persoon
 	public void setBetaalwijze(Betaalwijze betaalwijze) {
 		this.betaalwijze = betaalwijze;
 	}
+	
+	@Override
+	public boolean equals(Object object){
+		
+		
+		if(object instanceof Persoon){
+			Persoon persoon = (Persoon)object;
+			if(persoon.getBsn() == getBsn()
+					&& persoon.getVoornaam().equals(getVoornaam())
+					&& persoon.getAchternaam().equals(getAchternaam())
+					&& persoon.getGeboortedatum().equals(getGeboortedatum())
+					&& persoon.getGeslacht().equals(getGeslacht())){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
