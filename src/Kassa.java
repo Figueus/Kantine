@@ -60,7 +60,7 @@ public class Kassa {
             //Zorgt voor een betaalwijze zodat de simulatie nog blijft lopen.
             Betaalwijze betaalwijze = new Contant();
             //TODO fix a random
-            betaalwijze.setSaldo(90);
+            betaalwijze.setSaldo(20);
             //*TODO
             persoon.setBetaalwijze(betaalwijze);
             
@@ -69,7 +69,7 @@ public class Kassa {
             kassaGeld += totaal;	
             }
             catch(TeWeinigGeldException e){
-            	System.out.println(persoon.getVoornaam()+ " " + persoon.getAchternaam()+"kan de artikelen niet betalen.");
+            	System.out.println(persoon.getVoornaam()+ " " + persoon.getAchternaam()+" kan de artikelen niet betalen.");
             }
             
             //TODO
