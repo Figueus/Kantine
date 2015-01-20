@@ -19,15 +19,16 @@ public class Pinpas extends Betaalwijze {
 
 	/**
 	 * Methode om betaling af te handelen
+	 * @throws TeWeinigGeldException 
 	 */
-	public boolean betaal(double tebetalen) {
+	public void betaal(double tebetalen) throws TeWeinigGeldException {
 		// omitted
 		if(saldo+kredietlimiet >= tebetalen){
 			setSaldo(saldo - tebetalen);
-			return true;
+			
 		}
 		else{
-			return false;
+			throw new TeWeinigGeldException();
 		}
 	}
 }

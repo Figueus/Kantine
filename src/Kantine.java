@@ -27,6 +27,7 @@ public class Kantine {
      */
     public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) 
     {
+    	
         for(int i=0; i<artikelnamen.length; i++)
         {
             Artikel artikel = kantineaanbod.getArtikel(artikelnamen[i]);

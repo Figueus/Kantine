@@ -16,9 +16,9 @@ public class KantineSimulatie {
     // random generator
     private Random random;
     // aantal artikelen
-    private static final int AANTAL_ARTIKELEN=4;
+    private  int aantalArtikelen =4;
     // artikelen
-    private static final String[] artikelnamen = new String[] {"Koffie","Broodje pindakaas", "Broodje kaas","Appelsap"};
+    private String[] artikelnamen = new String[] {"Koffie","Broodje pindakaas", "Broodje kaas","Appelsap"};
     // prijzen
     private static double[] artikelprijzen = new double[]{1.50, 2.10, 1.65, 1.65};
     // minimum en maximum aantal artikelen per soort
@@ -40,8 +40,29 @@ public class KantineSimulatie {
     {
         kantine=new Kantine();
         random=new Random();
-        int[] hoeveelheden=getRandomArray(AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+        int[] hoeveelheden=getRandomArray(aantalArtikelen,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
         kantineaanbod=new KantineAanbod(artikelnamen, artikelprijzen,hoeveelheden);
+        kantine.setKantineAanbod(kantineaanbod);
+    }
+    
+    public KantineSimulatie(String[] namen, double[] prijzen, int[] hoeveelheden){
+    	artikelnamen = namen;
+    	aantalArtikelen = namen.length;
+    	kantine=new Kantine();
+        random=new Random();
+        //****//
+        for(String str: namen){
+        	System.out.println(str);
+        }
+        for(double str: prijzen){
+        	System.out.println(str);
+        }
+        for(int str: hoeveelheden){
+        	System.out.println(str);
+        }
+        //****//
+        System.out.println(namen + prijzen.toString() + hoeveelheden);
+        kantineaanbod = new KantineAanbod(namen, prijzen, hoeveelheden);
         kantine.setKantineAanbod(kantineaanbod);
     }
     
@@ -127,14 +148,14 @@ public class KantineSimulatie {
                  {
                 	 persoon = new Docent();
                  }
-                 
+                 persoon.setBsn(random.nextInt());
                  Dienblad dienblad = new Dienblad();
                  persoon.pakDienblad(dienblad);
                  int aantalartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
                  // random getal tussen 0 en 5
                  // genereer de artikelnummers, dit zijn indexen
                  // van de artikelnamen array
-                 int[] nodig = getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
+                 int[] nodig = getRandomArray(aantalartikelen, 0, aantalArtikelen-1);
                  // vind de artikelnamen op basis van de indexen hierboven
                  String[] artikelen = geefArtikelNamen(nodig);
 

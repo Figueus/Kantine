@@ -72,6 +72,7 @@ public class KantineAanbod {
         Artikel artikel = getArtikel(getArrayList(naam));
         
         //Als de voorraad lager is dan 5 artikelen
+        
         if(aanbod.get(naam).size() < 5)
         {
             //Vul de voorraad dan bij met 500 Artikelen van het desbetreffende artikel
