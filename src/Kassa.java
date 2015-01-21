@@ -58,6 +58,7 @@ public class Kassa {
             	}
             }
             //Zorgt voor een betaalwijze zodat de simulatie nog blijft lopen.
+            Pinpas pinpas = new Pinpas();
             Betaalwijze betaalwijze = new Contant();
             //TODO fix a random
             betaalwijze.setSaldo(20);

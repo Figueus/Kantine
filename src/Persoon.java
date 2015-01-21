@@ -288,11 +288,11 @@ public class Persoon
 		
 		if(object instanceof Persoon){
 			Persoon persoon = (Persoon)object;
-			if(persoon.getBsn() == getBsn()
+			if(persoon.toString().equals(persoon.toString())){
 					/*&& persoon.getVoornaam().equals(getVoornaam())
 					&& persoon.getAchternaam().equals(getAchternaam())
 					&& persoon.getGeboortedatum().equals(getGeboortedatum())
-					&& persoon.getGeslacht().equals(getGeslacht())*/){
+					&& persoon.getGeslacht().equals(getGeslacht())*/
 				return true;
 			}
 		}
